@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aidbyte - Empowering NGOs with Tech & AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+  <style>
+    :root {
+      --accent-yellow: #FFD700; /* Gold Yellow */
+      --accent-green: #32CD32;  /* Lime Green */
+      --accent-pink: #FF69B4;   /* Hot Pink */
+      --accent-purple: #9370DB; /* Medium Purple */
+      --primary-accent: #7fd7fa; /* Original Blue */
+      --text-light: #eaf6fb;
+      --bg-dark: #000000;
+      --bg-medium: #111111;
+    }
+    
+    html {
+      box-sizing: border-box;
+    }
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #000000;
+      min-height: 100vh;
+      color: #eaf6fb;
+      font-size: 1.4rem;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block; /* Remove extra space below images */
+    }
+    
+    /* Header with logo aligned */
+    header {
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(126, 215, 250, 0.2);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-yellow), var(--accent-pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-right: 1rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+    
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    
+    nav a {
+      color: #eaf6fb;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      transition: color 0.2s;
+      outline: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(126,215,250,0.18);
+    }
+    
+    nav a:focus, nav a:hover {
+      color: var(--accent-green);
+      background: rgba(50,205,50,0.10); /* Green with alpha */
+      border-color: var(--accent-green);
+    }
+    
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 2rem 5rem 2rem;
+      background: var(--bg-medium);
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    
+    .hero h1 {
+      font-size: 4.2rem;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 2rem 0;
+      color: var(--accent-purple);
+      text-align: center;
+    }
+    
+    .hero p {
+      font-size: 2rem;
+      max-width: 1000px;
+      color: #eaf6fb;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    /* Mission section */
+    .mission {
+      padding: 5rem 2rem;
+      background: var(--bg-medium);
+      border-radius: 20px;
+      margin: 0 auto 5rem;
+      max-width: 1400px;
+    }
+    
+    .mission-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .mission-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 2rem;
+    }
+    
+    .mission-text h2 {
+      font-size: 3.2rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-green);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .mission-text h2:after {
+      content: "";
+      position: absolute;
+      bottom: -0.8rem;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-green);
+      border-radius: 2px;
+    }
+    
+    .mission-text p {
+      font-size: 1.6rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .mission-image {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .mission-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      loading="lazy";
+    }
+    
+    /* CTA button */
+    .cta-btn {
+      background: rgba(255,255,255,0.08);
+      color: var(--accent-pink);
+      border: 2px solid var(--accent-pink);
+      padding: 1.5rem 4rem;
+      border-radius: 30px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s, color 0.2s;
+    }
+    
+    .cta-btn:focus, .cta-btn:hover {
+      background: rgba(255,105,180,0.10); /* Pink with alpha */
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+    
+    /* Feature cards */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4rem;
+      margin: 4rem auto;
+      max-width: 1400px;
+      padding: 0 2rem;
+    }
+    
+    .feature-card {
+      background: var(--bg-medium);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      max-width: 450px;
+      flex: 1 1 350px;
+      text-align: center;
+      transition: transform 0.2s;
+      font-size: 1.5rem;
+      border: 1px solid rgba(126,215,250,0.3);
+    }
+    
+    .feature-card:focus-within, .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-yellow);
+    }
+    
+    .feature-icon {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      /* Cycle colors for feature icons */
+    }
+
+    .features .feature-card:nth-child(1) .feature-icon {
+      color: var(--accent-yellow);
+    }
+    .features .feature-card:nth-child(2) .feature-icon {
+      color: var(--accent-green);
+    }
+    .features .feature-card:nth-child(3) .feature-icon {
+      color: var(--accent-pink);
+    }
+    
+    /* Get in Touch section */
+    .get-in-touch {
+      background: var(--bg-medium);
+      padding: 5rem 2rem;
+      border-radius: 20px;
+      margin: 0 auto 5rem;
+      max-width: 1400px;
+      text-align: center;
+    }
+    
+    .get-in-touch h2 {
+      font-size: 3.2rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-purple);
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .get-in-touch h2:after {
+      content: "";
+      position: absolute;
+      bottom: -0.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent-purple);
+      border-radius: 2px;
+    }
+    
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      max-width: 800px;
+      text-align: center;
+    }
+    
+    .contact-info h3 {
+      color: var(--accent-yellow);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(147,112,219,0.3); /* Purple with alpha */
+      min-width: 250px;
+    }
+    
+    .contact-icon {
+      font-size: 1.8rem;
+      color: var(--accent-green);
+      margin-right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: rgba(50,205,50,0.1); /* Green with alpha */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .social-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 20px;
+      border: 1px solid rgba(255,105,180,0.3); /* Pink with alpha */
+    }
+    
+    .social-links-large {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      width: 100%; /* Ensure it takes full width */
+    }
+    
+    .social-links-large a {
+      color: #eaf6fb;
+      font-size: 2.2rem;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      border: 1px solid rgba(126,215,250,0.3);
+      position: relative;
+      text-decoration: none;
+    }
+    
+    .social-links-large a:hover, .social-links-large a:focus {
+      background: rgba(255,215,0,0.15); /* Yellow with alpha */
+      color: var(--accent-yellow);
+      border-color: var(--accent-yellow);
+      transform: translateY(-5px);
+      text-decoration: none;
+    }
+    
+    .social-links-large a .social-name {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .social-links-large a:hover .social-name, .social-links-large a:focus .social-name {
+      opacity: 1;
+    }
+    
+    .social-platform {
+      text-align: center;
+      margin: 1rem;
+      flex: 1 1 auto; /* Allow items to grow and shrink */
+      min-width: 100px; /* Ensure a minimum width for wrapping */
+    }
+    
+    @media (max-width: 900px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .contact-info {
+        text-align: center;
+        max-width: 100%;
+      }
+      
+      .contact-item {
+        justify-content: center;
+      }
+      
+      .social-links-large {
+        justify-content: center;
+      }
+    }
+    
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--accent-pink);
+      font-weight: 500;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(126,215,250,0.3);
+      background: rgba(255,255,255,0.05);
+      color: #eaf6fb;
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 1.4rem;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-green);
+      background: rgba(50,205,50,0.1); /* Green with alpha */
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: rgba(255,255,255,0.08);
+      color: var(--accent-purple);
+      border: 2px solid var(--accent-purple);
+      padding: 1.2rem 3rem;
+      border-radius: 30px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s, color 0.2s;
+      margin-top: 1rem;
+      width: 100%;
+    }
+    
+    .submit-btn:focus, .submit-btn:hover {
+      background: rgba(147,112,219,0.10); /* Purple with alpha */
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+    
+    @media (max-width: 900px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .contact-info, .contact-form {
+        text-align: center;
+        max-width: 100%;
+      }
+      
+      .contact-item {
+        justify-content: center;
+      }
+      
+      .social-links-large {
+        justify-content: center;
+      }
+      
+      .form-group {
+        text-align: left;
+      }
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--bg-dark);
+      color: #eaf6fb;
+      padding: 4rem 2rem 3rem;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      border-radius: 30px 30px 0 0;
+      margin-top: 5rem;
+      border-top: 1px solid var(--accent-yellow);
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: 0 auto 3rem;
+    }
+    
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 2rem;
+      padding: 0 1.5rem;
+    }
+    
+    .footer-section h3 {
+      color: var(--accent-green);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links a {
+      color: #eaf6fb;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: inline-block;
+      padding: 0.3rem 0;
+    }
+    
+    .footer-links a:hover, .footer-links a:focus {
+      color: var(--accent-pink);
+      text-decoration: underline;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      color: #eaf6fb;
+      font-size: 1.8rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      border: 1px solid rgba(126,215,250,0.3);
+      text-decoration: none;
+    }
+    
+    .social-links a:hover, .social-links a:focus {
+      background: rgba(126,215,250,0.15);
+      color: var(--accent-purple);
+      border-color: var(--accent-purple);
+      text-decoration: none;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(126,215,250,0.2);
+      margin-top: 1rem;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .footer-section {
+        margin-bottom: 3rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .mission-content {
+        flex-direction: column;
+      }
+      
+      .mission-text {
+        padding-right: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      
+      .mission-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .hero h1 {
+        font-size: 3rem;
+      }
+      
+      .logo {
+        font-size: 2.2rem;
+      }
+      
+      header {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+        padding: 1.5rem 1rem;
+      }
+      
+      nav {
+        flex-wrap: wrap;
+        justify-content: center; /* Center nav items when they wrap */
+        margin-top: 1rem;
+        width: 100%; /* Ensure nav takes full width */
+      }
+      
+      nav a {
+        margin: 0.5rem 0.5rem; /* Reduce horizontal margin slightly */
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .mission-text {
+        padding-right: 0; /* Remove right padding on smaller screens */
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .mission-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      body {
+        font-size: 1.2rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.6rem;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+      
+      .logo-img {
+        width: 40px;
+        height: 40px;
+      }
+
+      nav a {
+        font-size: 1.1rem; /* Further reduce font size for very small screens */
+        padding: 0.3rem 0.6rem; /* Further reduce padding */
+        margin: 0.2rem 0.2rem; /* Further reduce margins */
+      }
+      
+      .cta-btn {
+        padding: 1.2rem 3rem;
+        font-size: 1.5rem;
+      }
+      
+      .mission-text h2 {
+        font-size: 2.5rem;
+      }
+
+      .mission {
+        padding: 3rem 1rem; /* Adjust padding for mission section on very small screens */
+      }
+    }
+    
+    /* Accessibility: focus styles for all interactive elements */
+    a:focus, button:focus {
+      outline: 2px solid var(--accent-yellow);
+      outline-offset: 2px;
+    }
+  </style>
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo-img">
+  <img src="https://media.discordapp.net/attachments/1044238022838857859/1384932468745961522/496510237_1232389318296523_633496515172158471_n.png?ex=68543a5f&is=6852e8df&hm=c46eb112d6336b002facf696d73f560181c795427d120dab7dad209975f8e9cf&=&format=webp&quality=lossless&width=729&height=703" alt="Aidbyte Logo" />
+</div>
+<div class="logo">Aidbyte</div>
+    </div>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/partners.html">Partners</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/index.html#contact">Contact</a>
+    </nav>
+  </header>
+  
+  <section class="projects-section">
+    <div class="container">
+      <h1>Our Projects</h1>
+      <div class="project-sections">
+        <div class="project-section-item">
+          <img src="https://images.unsplash.com/photo-1550547644-b77054271871?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI Data Analysis Image">
+          <div class="project-content">
+            <h3>AI-Powered Data Analysis for Environmental NGOs</h3>
+            <p>Developed a custom AI solution to analyze large datasets of environmental impact, helping NGOs identify pollution hotspots and advocate for policy changes more effectively.</p>
+            <div class="tags">
+              <span class="tag">AI</span>
+              <span class="tag">Data Analytics</span>
+              <span class="tag">Environmental</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-section-item">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af036?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mobile App Image">
+          <div class="project-content">
+            <h3>Mobile App for Disaster Relief Coordination</h3>
+            <p>Created a user-friendly mobile application to streamline communication and resource allocation for NGOs responding to natural disasters, improving efficiency and reach.</p>
+            <div class="tags">
+              <span class="tag">Mobile Development</span>
+              <span class="tag">Emergency Response</span>
+              <span class="tag">Logistics</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-section-item">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Web Platform Image">
+          <div class="project-content">
+            <h3>Web Platform for Educational Outreach</h3>
+            <p>Designed and built an interactive web platform for an educational NGO to deliver online courses and workshops to underserved communities globally.</p>
+            <div class="tags">
+              <span class="tag">Web Development</span>
+              <span class="tag">Education</span>
+              <span class="tag">E-learning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section-item">
+          <img src="https://images.unsplash.com/photo-1620321023192-f5195a454ce8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blockchain Supply Image">
+          <div class="project-content">
+            <h3>Blockchain for Transparent Supply Chains</h3>
+            <p>Implemented a blockchain-based system to ensure transparency and traceability in the supply chain of humanitarian aid, reducing fraud and increasing donor trust.</p>
+            <div class="tags">
+              <span class="tag">Blockchain</span>
+              <span class="tag">Supply Chain</span>
+              <span class="tag">Transparency</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section-item">
+          <img src="https://images.unsplash.com/photo-1534790566952-c3989876937b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="IoT Wildlife Image">
+          <div class="project-content">
+            <h3>IoT Solutions for Wildlife Conservation</h3>
+            <p>Deployed IoT sensors and data analytics to monitor wildlife movements and detect poaching activities in real-time, aiding conservation efforts in remote areas.</p>
+            <div class="tags">
+              <span class="tag">IoT</span>
+              <span class="tag">Conservation</span>
+              <span class="tag">Real-time Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section-item">
+          <img src="https://images.unsplash.com/photo-1522071820081-004f0151c46d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cloud Volunteer Image">
+          <div class="project-content">
+            <h3>Cloud-Based Volunteer Management System</h3>
+            <p>Developed a scalable cloud platform for NGOs to efficiently manage volunteers, track their hours and match skills with project needs, enhancing operational efficiency.</p>
+            <div class="tags">
+              <span class="tag">Cloud Computing</span>
+              <span class="tag">Volunteer Management</span>
+              <span class="tag">SaaS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Project Section */
+    .projects-section {
+      padding: 7rem 2rem 5rem 2rem;
+      background: var(--bg-medium);
+      margin-bottom: 4rem;
+      position: relative;
+      text-align: center;
+    }
+    .projects-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .projects-section h1 {
+      font-size: 4.2rem;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 2rem 0;
+      color: var(--accent-purple);
+    }
+    .project-sections {
+      margin-top: 4rem;
+      padding: 0 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-section-item {
+      background: var(--bg-medium);
+      border-radius: 20px;
+      padding: 4rem 3rem;
+      margin-bottom: 4rem;
+      border: 1px solid rgba(126,215,250,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .project-section-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-section-item img {
+       max-width: 100%;
+       height: 300px; /* Fixed height for cropping */
+       object-fit: cover; /* Crop image to fit */
+       border-radius: 15px;
+       margin-bottom: 2.5rem;
+       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+     }
+
+    .project-section-item h3 {
+      font-size: 2.8rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-section-item p {
+      font-size: 1.6rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 800px;
+    }
+
+    @media (min-width: 768px) {
+      .project-section-item {
+        flex-direction: row;
+        text-align: left;
+        padding: 5rem 4rem;
+      }
+
+      .project-section-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .project-section-item img {
+        flex: 0 0 40%;
+        margin-bottom: 0;
+        margin-right: 3rem;
+        margin-left: 0;
+      }
+
+      .project-section-item:nth-child(even) img {
+        margin-right: 0;
+        margin-left: 3rem;
+      }
+
+      .project-section-item .project-content {
+        flex: 1;
+      }
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(126,215,250,0.2);
+    }
+    .project-content {
+      padding: 2rem;
+    }
+    .project-content h3 {
+      font-size: 2.2rem;
+      color: var(--accent-yellow);
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .project-content p {
+      font-size: 1.6rem;
+      color: #eaf6fb;
+      line-height: 1.6;
+    }
+    .project-content .tags {
+      margin-top: 1.5rem;
+    }
+    .project-content .tag {
+      display: inline-block;
+      background: rgba(50,205,50,0.2);
+      color: var(--accent-green);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      margin-right: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    @media (max-width: 600px) {
+      .projects-section h1 {
+        font-size: 3rem;
+      }
+      .project-content h3 {
+        font-size: 1.8rem;
+      }
+      .project-content p {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+
+
+
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Aidbyte</h3>
+        <p>We're dedicated to empowering NGOs with cutting-edge technology solutions that amplify their impact and reach.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+           <li><a href="/about.html">About</a></li>
+           <li><a href="/partners.html">Partners</a></li>
+           <li><a href="/projects.html">Projects</a></li>
+           <li><a href="/index.html#contact">Contact</a></li>
+         </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">AI Integration</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Tech Consulting</a></li>
+          <li><a href="#">Data Analytics</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 Aidbyte. Empowering NGOs with Tech & AI. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>
