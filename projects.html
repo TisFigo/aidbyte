@@ -1,258 +1,654 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aidbyte - Empowering NGOs with Tech & AI</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <style>
-      :root {
-        --accent-yellow: #ffd700;
-        --accent-green: #32cd32;
-        --accent-pink: #ff69b4;
-        --accent-purple: #9370db;
-        --primary-accent: #7fd7fa;
-        --text-light: #eaf6fb;
-        --bg-dark: #000000;
-        --bg-medium: #111111;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Play Free Game</title>
 
-      * {
-        box-sizing: border-box;
-      }
+  <style>
+    :root {
+      --accent-yellow: #FFD700; /* Gold Yellow */
+      --accent-green: #32CD32;  /* Lime Green */
+      --accent-pink: #FF69B4;   /* Hot Pink */
+      --accent-purple: #9370DB; /* Medium Purple */
+      --primary-accent: #7fd7fa; /* Original Blue */
+      --text-light: #eaf6fb;
+      --bg-dark: #000000;
+      --bg-medium: #111111;
+    }
+    
+    html {
+      box-sizing: border-box;
+    }
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
 
-      body {
-        margin: 0;
-        font-family: "Roboto", sans-serif;
-        background: linear-gradient(to bottom right, #1e1e2f, #292940);
-        color: #ffffff;
-        overflow-x: hidden;
-        min-height: 100vh;
-      }
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #000000;
+      min-height: 100vh;
+      color: #eaf6fb;
+      font-size: 1.4rem;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block; /* Remove extra space below images */
+    }
+    
+    /* Header with logo aligned */
+    header {
+      background: rgba(0, 0, 0, 0.9);
+      width: 100%;
+      color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(126, 215, 250, 0.2);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-yellow), var(--accent-pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-right: 1rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+    
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    
+    nav a {
+      color: #eaf6fb;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      transition: color 0.2s;
+      outline: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(126,215,250,0.18);
+    }
+    
+    nav a:focus, nav a:hover {
+      color: var(--accent-green);
+      background: rgba(50,205,50,0.10); /* Green with alpha */
+      border-color: var(--accent-green);
+    }
+    * {
+      box-sizing: border-box;
+    }
 
-      header {
-        background: rgba(0, 0, 0, 0.9);
-        color: #fff;
-        padding: 1rem 2rem;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        display: flex;
-        justify-content: space-between;
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(to bottom right, #1e1e2f, #292940);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1px;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .ad {
+      margin: 10px 0;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .game-container {
+      width: 100%;
+      max-width: 700px;
+      aspect-ratio: 2 / 3;
+      margin: 10px auto;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .game-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .timer {
+      margin-top: 5px;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .side-msg { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .game-container {
+        aspect-ratio: 9 / 16;
+      }
+    }
+
+    /* Safe-named overlay */
+    #block-warning-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      background: linear-gradient(to bottom right, #000000cc, #111111cc);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-box {
+      background: #1e1e2f;
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      position: relative;
+      display: none;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.3s ease;
+    }
+
+    .popup-box.show {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .popup-box p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .popup-box .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+/* Footer */
+    footer {
+      background: var(--bg-dark);
+      width: 100%;
+      color: #eaf6fb;
+      padding: 4rem 2rem 3rem;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      border-radius: 30px 30px 0 0;
+      margin-top: 5rem;
+      border-top: 1px solid var(--accent-yellow);
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1400px;
+      margin: 0 auto 3rem;
+    }
+    
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 2rem;
+      padding: 0 1.5rem;
+    }
+    
+    .footer-section h3 {
+      color: var(--accent-green);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links a {
+      color: #eaf6fb;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: inline-block;
+      padding: 0.3rem 0;
+    }
+    
+    .footer-links a:hover, .footer-links a:focus {
+      color: var(--accent-pink);
+      text-decoration: underline;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      color: #eaf6fb;
+      font-size: 1.8rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      border: 1px solid rgba(126,215,250,0.3);
+      text-decoration: none;
+    }
+    
+    .social-links a:hover, .social-links a:focus {
+      background: rgba(126,215,250,0.15);
+      color: var(--accent-purple);
+      border-color: var(--accent-purple);
+      text-decoration: none;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(126,215,250,0.2);
+      margin-top: 1rem;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+      .footer-content {
+        flex-direction: column;
         align-items: center;
-        border-bottom: 1px solid rgba(126, 215, 250, 0.2);
+        text-align: center;
       }
-
-      .logo-container {
-        display: flex;
+      
+      .footer-section {
+        margin-bottom: 3rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .mission-content {
+        flex-direction: column;
+      }
+      
+      .mission-text {
+        padding-right: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      
+      .mission-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .features {
+        flex-direction: column;
         align-items: center;
       }
-
+      
+      .hero h1 {
+        font-size: 3rem;
+      }
+      
       .logo {
-        font-size: 2.4rem;
-        font-weight: 700;
-        background: linear-gradient(
-          135deg,
-          var(--accent-yellow),
-          var(--accent-pink)
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-left: 1rem;
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: 1px;
+        font-size: 2.2rem;
       }
-
-      .logo-img img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
+      
+      header {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+        padding: 1.5rem 1rem;
       }
-
+      
       nav {
-        display: flex;
-        align-items: center;
         flex-wrap: wrap;
+        justify-content: center; /* Center nav items when they wrap */
+        margin-top: 1rem;
+        width: 100%; /* Ensure nav takes full width */
+      }
+      
+      nav a {
+        margin: 0.5rem 0.5rem; /* Reduce horizontal margin slightly */
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .mission-text {
+        padding-right: 0; /* Remove right padding on smaller screens */
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .mission-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      body {
+        font-size: 1.2rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.6rem;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+      
+      .logo-img {
+        width: 40px;
+        height: 40px;
       }
 
       nav a {
-        color: #eaf6fb;
-        text-decoration: none;
-        margin: 0 1.5rem;
-        font-weight: 700;
+        font-size: 1.1rem; /* Further reduce font size for very small screens */
+        padding: 0.3rem 0.6rem; /* Further reduce padding */
+        margin: 0.2rem 0.2rem; /* Further reduce margins */
+      }
+      
+      .cta-btn {
+        padding: 1.2rem 3rem;
+        font-size: 1.5rem;
+      }
+      
+      .mission-text h2 {
+        font-size: 2.5rem;
+      }
+
+      .mission {
+        padding: 3rem 1rem; /* Adjust padding for mission section on very small screens */
+      }
+    }
+    
+    /* Accessibility: focus styles for all interactive elements */
+    a:focus, button:focus {
+      outline: 2px solid var(--accent-yellow);
+      outline-offset: 2px;
+    }
+
+    /* Coming Soon Section Styles */
+    .coming-soon-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh; /* Adjust as needed */
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--bg-medium);
+      margin: 4rem auto;
+      border-radius: 20px;
+      max-width: 1200px;
+    }
+
+    .coming-soon-content {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .coming-soon-section h1 {
+      font-size: 4rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-yellow);
+      margin-bottom: 2rem;
+    }
+
+    .coming-soon-section p {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+    }
+
+    .social-links-coming-soon {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .social-links-coming-soon a {
+      color: var(--text-light);
+      font-size: 2.5rem;
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      border: 1px solid rgba(126,215,250,0.3);
+      text-decoration: none;
+    }
+
+    .social-links-coming-soon a:hover, .social-links-coming-soon a:focus {
+      background: rgba(255,215,0,0.15); /* Yellow with alpha */
+      color: var(--accent-yellow);
+      border-color: var(--accent-yellow);
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 900px) {
+      .coming-soon-section h1 {
+        font-size: 3rem;
+      }
+      .coming-soon-section p {
         font-size: 1.6rem;
-        transition: color 0.2s;
-        padding: 0.7rem 1.5rem;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(126, 215, 250, 0.18);
       }
-
-      nav a:hover {
-        color: var(--accent-green);
-        background: rgba(50, 205, 50, 0.1);
-        border-color: var(--accent-green);
+      .social-links-coming-soon a {
+        font-size: 2rem;
+        width: 4.5rem;
+        height: 4.5rem;
       }
+    }
 
-      .game-container {
-        width: 100%;
-        max-width: 700px;
-        aspect-ratio: 2 / 3;
-        margin: 40px auto;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.03);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    @media (max-width: 600px) {
+      .coming-soon-section h1 {
+        font-size: 2.5rem;
       }
-
-      .game-container iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        border-radius: 10px;
-        display: block;
-      }
-
-      .ad-container {
-        margin: 40px auto;
-        max-width: 1000px;
-        text-align: center;
-      }
-
-      footer {
-        background: #000;
-        color: #eaf6fb;
-        padding: 3rem 2rem;
+      .coming-soon-section p {
         font-size: 1.4rem;
-        border-top: 1px solid var(--accent-yellow);
-        margin-top: 5rem;
       }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      .footer-section {
-        flex: 1;
-        min-width: 250px;
-        margin-bottom: 2rem;
-        padding: 0 1.5rem;
-      }
-
-      .footer-section h3 {
-        color: var(--accent-green);
+      .social-links-coming-soon a {
         font-size: 1.8rem;
-        margin-bottom: 1.5rem;
+        width: 4rem;
+        height: 4rem;
       }
+    }
+  </style>
+</head>
+<body>
 
-      .footer-links {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer-links a {
-        color: #eaf6fb;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-links a:hover {
-        color: var(--accent-pink);
-      }
-
-      .copyright {
-        text-align: center;
-        margin-top: 2rem;
-        font-size: 1.2rem;
-        border-top: 1px solid rgba(126, 215, 250, 0.2);
-        padding-top: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="logo-container">
-        <div class="logo-img">
-          <img
-            src="https://media.discordapp.net/attachments/1044238022838857859/1384932468745961522/496510237_1232389318296523_633496515172158471_n.png?ex=68543a5f&is=6852e8df&hm=c46eb112d6336b002facf696d73f560181c795427d120dab7dad209975f8e9cf&=&format=webp&quality=lossless&width=729&height=703"
-            alt="Aidbyte Logo"
-          />
-        </div>
-        <div class="logo">Aidbyte</div>
-      </div>
-      <nav>
-        <a href="/about.html">About</a>
-        <a href="/partners.html">Partners</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/index.html#contact">Contact</a>
-      </nav>
-    </header>
-
-    <div class="ad-container">
-      <script
-        async
-        data-cfasync="false"
-        src="//pl26954181.profitableratecpm.com/37b7e923de5e32a790db8aa668d8e77b/invoke.js"
-      ></script>
-      <div id="container-37b7e923de5e32a790db8aa668d8e77b"></div>
+  <!-- Invasive Popup (Safe IDs/Classes) -->
+  <div id="block-warning-overlay">
+    <div class="popup-box" id="popup-message">
+      <p>😓 We detected an ad blocker.<br>Ads help keep this game free to play.<br>Please consider disabling it 🙏</p>
+      <button class="close-btn" onclick="hidePopup()">✖</button>
     </div>
-
-    <div class="game-container">
-      <iframe
-        src="https://id-preview--8314adf0-9327-41ad-8328-703112c96a84.lovable.app/embed"
-        allowfullscreen
-      ></iframe>
+  </div>
+<header>
+    <div class="logo-container">
+      <div class="logo-img">
+  <img src="https://media.discordapp.net/attachments/1044238022838857859/1384932468745961522/496510237_1232389318296523_633496515172158471_n.png?ex=68543a5f&is=6852e8df&hm=c46eb112d6336b002facf696d73f560181c795427d120dab7dad209975f8e9cf&=&format=webp&quality=lossless&width=729&height=703" alt="Aidbyte Logo" />
+</div>
+<div class="logo">Aidbyte</div>
     </div>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/partners.html">Partners</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/index.html#contact">Contact</a>
+    </nav>
+  </header>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>About Aidbyte</h3>
-          <p>
-            We're dedicated to empowering NGOs with cutting-edge technology
-            solutions that amplify their impact and reach.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/partners.html">Partners</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-            <li><a href="/index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Services</h3>
-          <ul class="footer-links">
-            <li><a href="#">AI Integration</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Tech Consulting</a></li>
-            <li><a href="#">Data Analytics</a></li>
-          </ul>
-        </div>
+  <!-- Ad Section -->
+  <div class="ad">
+    <script async data-cfasync="false" src="//pl26954181.profitableratecpm.com/37b7e923de5e32a790db8aa668d8e77b/invoke.js"></script>
+    <div id="container-37b7e923de5e32a790db8aa668d8e77b"></div>
+  </div>
+
+  <!-- Game Section -->
+  <div class="game-container">
+    <iframe src="https://id-preview--8314adf0-9327-41ad-8328-703112c96a84.lovable.app/embed" allowfullscreen></iframe>
+  </div>
+
+  <!-- Timer -->
+  <div class="timer" id="time-spent">You’ve been here for 0 seconds.</div>
+
+  <!-- JavaScript -->
+  <script>
+    // Timer
+    let seconds = 0;
+    setInterval(() => {
+      seconds++;
+      const m = Math.floor(seconds / 60);
+      const s = seconds % 60;
+      document.getElementById("time-spent").textContent =
+        `You’ve been here for ${m ? m + " minute(s) and " : ""}${s} second(s).`;
+    }, 1000);
+
+    // Popup logic
+    function showPopup() {
+      const overlay = document.getElementById('block-warning-overlay');
+      const popup = document.getElementById('popup-message');
+      overlay.style.display = 'flex';
+      setTimeout(() => popup.classList.add('show'), 50);
+    }
+
+    function hidePopup() {
+      document.getElementById('block-warning-overlay').style.display = 'none';
+    }
+
+    // Robust detection
+    window.addEventListener('load', () => {
+      const adScriptURL = "https://pl26954181.profitableratecpm.com/37b7e923de5e32a790db8aa668d8e77b/invoke.js";
+
+      let detected = false;
+
+      // Try fetch (may fail silently)
+      fetch(adScriptURL, { method: 'HEAD', mode: 'no-cors' })
+        .catch(() => {
+          detected = true;
+          showPopup();
+        });
+
+      // Fallback in case fetch hangs or script is removed
+      setTimeout(() => {
+        const adDiv = document.getElementById("container-37b7e923de5e32a790db8aa668d8e77b");
+        if (!detected && (!adDiv || adDiv.innerHTML.trim() === "")) {
+          showPopup();
+        }
+      }, 1500);
+    });
+  </script>
+<footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Aidbyte</h3>
+        <p>We're dedicated to empowering NGOs with cutting-edge technology solutions that amplify their impact and reach.</p>
       </div>
-      <div class="copyright">
-        &copy; 2025 Aidbyte. Empowering NGOs with Tech & AI. All Rights
-        Reserved.
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+           <li><a href="/about.html">About</a></li>
+           <li><a href="/partners.html">Partners</a></li>
+           <li><a href="/projects.html">Projects</a></li>
+           <li><a href="/index.html#contact">Contact</a></li>
+         </ul>
       </div>
-    </footer>
-  </body>
+      
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">AI Integration</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Tech Consulting</a></li>
+          <li><a href="#">Data Analytics</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 Aidbyte. Empowering NGOs with Tech and AI. All Rights Reserved.
+    </div>
+  </footer>
+</body>
 </html>
