@@ -756,233 +756,235 @@
     </nav>
   </header>
   
-  <section class="projects-section">
-    <div class="container">
-      <h1>Our Projects</h1>
-      <div class="project-sections">
-        <div class="project-section-item">
-          <img src="https://images.unsplash.com/photo-1550547644-b77054271871?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI Data Analysis Image">
-          <div class="project-content">
-            <h3>AI-Powered Data Analysis for Environmental NGOs</h3>
-            <p>Developed a custom AI solution to analyze large datasets of environmental impact, helping NGOs identify pollution hotspots and advocate for policy changes more effectively.</p>
-            <div class="tags">
-              <span class="tag">AI</span>
-              <span class="tag">Data Analytics</span>
-              <span class="tag">Environmental</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-section-item">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af036?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mobile App Image">
-          <div class="project-content">
-            <h3>Mobile App for Disaster Relief Coordination</h3>
-            <p>Created a user-friendly mobile application to streamline communication and resource allocation for NGOs responding to natural disasters, improving efficiency and reach.</p>
-            <div class="tags">
-              <span class="tag">Mobile Development</span>
-              <span class="tag">Emergency Response</span>
-              <span class="tag">Logistics</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-section-item">
-          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Web Platform Image">
-          <div class="project-content">
-            <h3>Web Platform for Educational Outreach</h3>
-            <p>Designed and built an interactive web platform for an educational NGO to deliver online courses and workshops to underserved communities globally.</p>
-            <div class="tags">
-              <span class="tag">Web Development</span>
-              <span class="tag">Education</span>
-              <span class="tag">E-learning</span>
-            </div>
-          </div>
-        </div>
+  <style>
+      * {
+        box-sizing: border-box;
+      }
 
-        <div class="project-section-item">
-          <img src="https://images.unsplash.com/photo-1620321023192-f5195a454ce8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blockchain Supply Image">
-          <div class="project-content">
-            <h3>Blockchain for Transparent Supply Chains</h3>
-            <p>Implemented a blockchain-based system to ensure transparency and traceability in the supply chain of humanitarian aid, reducing fraud and increasing donor trust.</p>
-            <div class="tags">
-              <span class="tag">Blockchain</span>
-              <span class="tag">Supply Chain</span>
-              <span class="tag">Transparency</span>
-            </div>
-          </div>
-        </div>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(to bottom right, #1e1e2f, #292940);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-        <div class="project-section-item">
-          <img src="https://images.unsplash.com/photo-1534790566952-c3989876937b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="IoT Wildlife Image">
-          <div class="project-content">
-            <h3>IoT Solutions for Wildlife Conservation</h3>
-            <p>Deployed IoT sensors and data analytics to monitor wildlife movements and detect poaching activities in real-time, aiding conservation efforts in remote areas.</p>
-            <div class="tags">
-              <span class="tag">IoT</span>
-              <span class="tag">Conservation</span>
-              <span class="tag">Real-time Monitoring</span>
-            </div>
-          </div>
-        </div>
+      .side-msg {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #bbb;
+        font-size: 14px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        opacity: 0.6;
+        pointer-events: none;
+      }
 
-        <div class="project-section-item">
-          <img src="https://images.unsplash.com/photo-1522071820081-004f0151c46d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cloud Volunteer Image">
-          <div class="project-content">
-            <h3>Cloud-Based Volunteer Management System</h3>
-            <p>Developed a scalable cloud platform for NGOs to efficiently manage volunteers, track their hours and match skills with project needs, enhancing operational efficiency.</p>
-            <div class="tags">
-              <span class="tag">Cloud Computing</span>
-              <span class="tag">Volunteer Management</span>
-              <span class="tag">SaaS</span>
-            </div>
-          </div>
-        </div>
+      .side-msg.left {
+        left: 5px;
+      }
+      .side-msg.right {
+        right: 5px;
+      }
+
+      .ad {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .game-container {
+        width: 100%;
+        max-width: 700px;
+        aspect-ratio: 2 / 3;
+        margin: 10px auto;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .game-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .timer {
+        margin-top: 5px;
+        font-size: 15px;
+        color: #ccc;
+      }
+
+      @media (max-width: 768px) {
+        .side-msg {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .game-container {
+          aspect-ratio: 9 / 16;
+        }
+      }
+
+      /* Safe-named overlay */
+      #block-warning-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        background: linear-gradient(to bottom right, #000000cc, #111111cc);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .popup-box {
+        background: #1e1e2f;
+        color: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        width: 90%;
+        max-width: 360px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        position: relative;
+        display: none;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.3s ease;
+      }
+
+      .popup-box.show {
+        display: block;
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .popup-box p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .popup-box .close-btn {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Invasive Popup (Safe IDs/Classes) -->
+    <div id="block-warning-overlay">
+      <div class="popup-box" id="popup-message">
+        <p>
+          😓 We detected an ad blocker.<br />Ads support us by generating
+          valuable revenue. <br />Please consider disabling it 🙏
+        </p>
+        <button class="close-btn" onclick="hidePopup()">✖</button>
       </div>
     </div>
-  </section>
 
-  <style>
-    /* Project Section */
-    .projects-section {
-      padding: 7rem 2rem 5rem 2rem;
-      background: var(--bg-medium);
-      margin-bottom: 4rem;
-      position: relative;
-      text-align: center;
-    }
-    .projects-section .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .projects-section h1 {
-      font-size: 4.2rem;
-      font-family: 'Montserrat', sans-serif;
-      margin: 0 0 2rem 0;
-      color: var(--accent-purple);
-    }
-    .project-sections {
-      margin-top: 4rem;
-      padding: 0 2rem;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    <!-- Side Messages -->
+    <div class="side-msg left">
+      Thanks for supporting us by being on this page!
+    </div>
+    <div class="side-msg right">Scroll Down to see the game!</div>
 
-    .project-section-item {
-      background: var(--bg-medium);
-      border-radius: 20px;
-      padding: 4rem 3rem;
-      margin-bottom: 4rem;
-      border: 1px solid rgba(126,215,250,0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+    <!-- Ad Section -->
+    <div class="ad">
+      <script
+        async
+        data-cfasync="false"
+        src="//pl26954181.profitableratecpm.com/37b7e923de5e32a790db8aa668d8e77b/invoke.js"
+      ></script>
+      <div id="container-37b7e923de5e32a790db8aa668d8e77b"></div>
+    </div>
 
-    .project-section-item:last-child {
-      margin-bottom: 0;
-    }
+    <!-- Game Section -->
+    <div class="game-container">
+      <iframe
+        src="https://id-preview--8314adf0-9327-41ad-8328-703112c96a84.lovable.app/embed"
+        allowfullscreen
+      ></iframe>
+    </div>
 
-    .project-section-item img {
-       max-width: 100%;
-       height: 300px; /* Fixed height for cropping */
-       object-fit: cover; /* Crop image to fit */
-       border-radius: 15px;
-       margin-bottom: 2.5rem;
-       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-     }
+    <!-- Timer -->
+    <div class="timer" id="time-spent">You’ve been here for 0 seconds.</div>
 
-    .project-section-item h3 {
-      font-size: 2.8rem;
-      font-family: 'Montserrat', sans-serif;
-      color: var(--accent-green);
-      margin-bottom: 1.5rem;
-    }
+    <!-- JavaScript -->
+    <script>
+      // Timer
+      let seconds = 0;
+      setInterval(() => {
+        seconds++;
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        document.getElementById(
+          "time-spent"
+        ).textContent = `You’ve been here for ${
+          m ? m + " minute(s) and " : ""
+        }${s} second(s).`;
+      }, 1000);
 
-    .project-section-item p {
-      font-size: 1.6rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 800px;
-    }
-
-    @media (min-width: 768px) {
-      .project-section-item {
-        flex-direction: row;
-        text-align: left;
-        padding: 5rem 4rem;
+      // Popup logic
+      function showPopup() {
+        const overlay = document.getElementById("block-warning-overlay");
+        const popup = document.getElementById("popup-message");
+        overlay.style.display = "flex";
+        setTimeout(() => popup.classList.add("show"), 50);
       }
 
-      .project-section-item:nth-child(even) {
-        flex-direction: row-reverse;
+      function hidePopup() {
+        document.getElementById("block-warning-overlay").style.display = "none";
       }
 
-      .project-section-item img {
-        flex: 0 0 40%;
-        margin-bottom: 0;
-        margin-right: 3rem;
-        margin-left: 0;
-      }
+      // Robust detection
+      window.addEventListener("load", () => {
+        const adScriptURL =
+          "https://pl26954181.profitableratecpm.com/37b7e923de5e32a790db8aa668d8e77b/invoke.js";
 
-      .project-section-item:nth-child(even) img {
-        margin-right: 0;
-        margin-left: 3rem;
-      }
+        let detected = false;
 
-      .project-section-item .project-content {
-        flex: 1;
-      }
-    }
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 1px solid rgba(126,215,250,0.2);
-    }
-    .project-content {
-      padding: 2rem;
-    }
-    .project-content h3 {
-      font-size: 2.2rem;
-      color: var(--accent-yellow);
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-    .project-content p {
-      font-size: 1.6rem;
-      color: #eaf6fb;
-      line-height: 1.6;
-    }
-    .project-content .tags {
-      margin-top: 1.5rem;
-    }
-    .project-content .tag {
-      display: inline-block;
-      background: rgba(50,205,50,0.2);
-      color: var(--accent-green);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-size: 1.2rem;
-      margin-right: 0.8rem;
-      margin-bottom: 0.8rem;
-    }
-    @media (max-width: 600px) {
-      .projects-section h1 {
-        font-size: 3rem;
-      }
-      .project-content h3 {
-        font-size: 1.8rem;
-      }
-      .project-content p {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
+        // Try fetch (may fail silently)
+        fetch(adScriptURL, { method: "HEAD", mode: "no-cors" }).catch(() => {
+          detected = true;
+          showPopup();
+        });
 
+        // Fallback in case fetch hangs or script is removed
+        setTimeout(() => {
+          const adDiv = document.getElementById(
+            "container-37b7e923de5e32a790db8aa668d8e77b"
+          );
+          if (!detected && (!adDiv || adDiv.innerHTML.trim() === "")) {
+            showPopup();
+          }
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
 
-
-  
   <footer>
     <div class="footer-content">
       <div class="footer-section">
