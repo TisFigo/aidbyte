@@ -115,6 +115,33 @@
       background: rgba(50,205,50,0.10); /* Green with alpha */
       border-color: var(--accent-green);
     }
+    
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 2rem 0rem 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .hero h1 {
+      font-size: 4.2rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0 0 2rem 0;
+      color: var(--accent-purple);
+      text-align: center;
+    }
+    
+    .hero p {
+      font-size: 2rem;
+      max-width: 1000px;
+      color: #eaf6fb;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
     * {
       box-sizing: border-box;
     }
@@ -398,6 +425,14 @@
         left: 50%;
         transform: translateX(-50%);
       }
+      
+      .hero {
+        padding: 5rem 1.5rem 4rem;
+      }
+      
+      .hero p {
+        font-size: 1.8rem;
+      }
     }
     
     @media (max-width: 600px) {
@@ -439,6 +474,15 @@
 
       .mission {
         padding: 3rem 1rem; /* Adjust padding for mission section on very small screens */
+      }
+      
+      .hero {
+        padding: 4rem 1rem 3rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
       }
     }
     
@@ -541,18 +585,10 @@
   </style>
 </head>
 <body>
-
-  <!-- Invasive Popup (Safe IDs/Classes) -->
-  <div id="block-warning-overlay">
-    <div class="popup-box" id="popup-message">
-      <p>😓 We detected an ad blocker.<br>Ads help keep this game free to play.<br>Please consider disabling it 🙏</p>
-      <button class="close-btn" onclick="hidePopup()">✖</button>
-    </div>
-  </div>
 <header>
     <div class="logo-container">
       <div class="logo-img">
-  <img src="https://media.discordapp.net/attachments/1044238022838857859/1384932468745961522/496510237_1232389318296523_633496515172158471_n.png?ex=6856349f&is=6854e31f&hm=34d313378e5e83a70711c9e7b3c0a17b97049460c59c93192637ff40e341341a&=&format=webp&quality=lossless&width=729&height=703" alt="Aidbyte Logo" />
+  <img src="https://media.discordapp.net/attachments/1044238022838857859/1384932468745961522/496510237_1232389318296523_633496515172158471_n.png?ex=686b4c9f&is=6869fb1f&hm=35f015685f5c9640fe8c4c8a3a0329fe045d758dbbbc7ac3d3fbc01c77b61a96&=&format=webp&quality=lossless&width=729&height=703" alt="Aidbyte Logo" />
 </div>
 <div class="logo">Aidbyte</div>
     </div>
@@ -564,66 +600,323 @@
     </nav>
   </header>
 
-  <!-- Ad Section -->
-  <div class="ad">
-  <script async="async" data-cfasync="false" src="//pl26954181.profitableratecpm.com/37b7e923de5e32a790db8aa668d8e77b/invoke.js"></script>
-<div id="container-37b7e923de5e32a790db8aa668d8e77b"></div>
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Our Projects</h1>
+</section>
+
+<div class="projects-container">
+  <div class="project-card" onclick="openProject(1)">
+    <img src="https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="AI-Powered Donation Platform Thumbnail" class="project-thumbnail">
+    <h3>AI-Powered Donation Platform</h3>
+    <p class="project-preview">An intelligent platform that connects donors with NGOs using AI-driven matching algorithms.</p>
   </div>
 
-  <!-- Game Section -->
-  <div class="game-container">
-    <iframe src="https://id-preview--8314adf0-9327-41ad-8328-703112c96a84.lovable.app/embed" allowfullscreen></iframe>
+  <div class="project-card" onclick="openProject(2)">
+    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="NGO Resource Management System Thumbnail" class="project-thumbnail">
+    <h3>NGO Resource Management System</h3>
+    <p class="project-preview">Comprehensive solution for NGOs to manage resources, volunteers, and beneficiaries efficiently.</p>
   </div>
 
-  <!-- Timer -->
-  <div class="timer" id="time-spent">You’ve been here for 0 seconds.</div>
+  <div class="project-card" onclick="openProject(3)">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Impact Analytics Dashboard Thumbnail" class="project-thumbnail">
+    <h3>Impact Analytics Dashboard</h3>
+    <p class="project-preview">Data visualization platform helping NGOs track and showcase their social impact metrics.</p>
+  </div>
+</div>
 
-  <!-- JavaScript -->
-  <script>
-    // Timer
-    let seconds = 0;
-    setInterval(() => {
-      seconds++;
-      const m = Math.floor(seconds / 60);
-      const s = seconds % 60;
-      document.getElementById("time-spent").textContent =
-        `You’ve been here for ${m ? m + " minute(s) and " : ""}${s} second(s).`;
-    }, 1000);
+<!-- Project Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div class="slideshow-container">
+      <div class="slides">
+        <!-- Slides will be inserted here by JavaScript -->
+      </div>
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+      <div class="slide-counter" id="slideCounter">1 / 4</div>
+      <div class="slide-indicators" id="slideIndicators">
+        <!-- Indicators will be inserted here by JavaScript -->
+      </div>
+    </div>
+    <div class="project-details">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
 
-    // Popup logic
-    function showPopup() {
-      const overlay = document.getElementById('block-warning-overlay');
-      const popup = document.getElementById('popup-message');
-      overlay.style.display = 'flex';
-      setTimeout(() => popup.classList.add('show'), 50);
-    }
+<style>
+.projects-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
 
-    function hidePopup() {
-      document.getElementById('block-warning-overlay').style.display = 'none';
-    }
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(126, 215, 250, 0.1);
+}
 
-    // Robust detection
-    window.addEventListener('load', () => {
-      const adScriptURL = "https://pl26954181.profitableratecpm.com/37b7e923de5e32a790db8aa668d8e77b/invoke.js";
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-yellow);
+}
 
-      let detected = false;
+.project-thumbnail {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
 
-      // Try fetch (may fail silently)
-      fetch(adScriptURL, { method: 'HEAD', mode: 'no-cors' })
-        .catch(() => {
-          detected = true;
-          showPopup();
-        });
+.project-card h3 {
+  color: var(--accent-yellow);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
 
-      // Fallback in case fetch hangs or script is removed
-      setTimeout(() => {
-        const adDiv = document.getElementById("container-37b7e923de5e32a790db8aa668d8e77b");
-        if (!detected && (!adDiv || adDiv.innerHTML.trim() === "")) {
-          showPopup();
-        }
-      }, 1500);
-    });
-  </script>
+.project-preview {
+  color: var(--text-light);
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2% auto;
+  background: var(--bg-medium);
+  padding: 2rem;
+  border-radius: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--text-light);
+  z-index: 1001;
+}
+
+.slideshow-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.slides img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.slide-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.slide-indicators {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: var(--accent-yellow);
+  transform: scale(1.2);
+}
+
+.project-details {
+  padding: 2rem 0;
+}
+
+.project-details h2 {
+  color: var(--accent-yellow);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+
+  .slides img {
+    height: 300px;
+  }
+}
+</style>
+
+<script>
+const projectData = {
+  1: {
+    title: "AI-Powered Donation Platform",
+    description: "Our flagship project revolutionizes how donations reach those in need. Using advanced AI algorithms, we match donors with NGOs based on their interests, values, and impact areas. The platform features real-time tracking, impact reporting, and seamless payment integration. Built with React and TensorFlow, it processes thousands of matches daily with 98% accuracy.",
+    images: [
+      "https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Dashboard view
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // AI matching visualization
+      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Payment processing
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80" // Team working on platform
+    ]
+  },
+  2: {
+    title: "NGO Resource Management System",
+    description: "A comprehensive solution that streamlines NGO operations. Features include volunteer management, resource allocation, beneficiary tracking, and automated reporting. The system has helped over 50 NGOs reduce administrative overhead by 40% and improve resource utilization by 60%.",
+    images: [
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Team planning resources
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Resource tracking interface
+      "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Volunteer management
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80" // Data reporting
+    ]
+  },
+  3: {
+    title: "Impact Analytics Dashboard",
+    description: "A powerful visualization platform that helps NGOs measure, track, and communicate their impact. Built with D3.js and Python, it processes complex data sets to create intuitive, interactive visualizations. Organizations using this dashboard have reported a 75% increase in donor engagement and improved decision-making capabilities.",
+    images: [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Data visualization
+      "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Analytics dashboard
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Charts and graphs
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80" // Team analyzing data
+    ]
+  }
+};
+
+let currentSlide = 0;
+let currentProject = null;
+
+function openProject(projectId) {
+  currentProject = projectId;
+  currentSlide = 0;
+  const project = projectData[projectId];
+  
+  document.getElementById('modalTitle').textContent = project.title;
+  document.getElementById('modalDescription').textContent = project.description;
+  
+  const slidesContainer = document.querySelector('.slides');
+  slidesContainer.innerHTML = project.images
+    .map(src => `<img src="${src}" alt="Project image">`)
+    .join('');
+  
+  // Create slide indicators
+  const indicatorsContainer = document.getElementById('slideIndicators');
+  indicatorsContainer.innerHTML = '';
+  
+  for (let i = 0; i < project.images.length; i++) {
+    const indicator = document.createElement('span');
+    indicator.className = 'indicator';
+    indicator.onclick = function() { showSlide(i); };
+    indicatorsContainer.appendChild(indicator);
+  }
+  
+  document.getElementById('projectModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  
+  showSlide(0);
+}
+
+function closeModal() {
+  document.getElementById('projectModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function changeSlide(direction) {
+  const slides = document.querySelectorAll('.slides img');
+  currentSlide = (currentSlide + direction + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+function showSlide(index) {
+  const slides = document.querySelectorAll('.slides img');
+  const indicators = document.querySelectorAll('.indicator');
+  
+  // Update slides
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
+  
+  // Update indicators
+  indicators.forEach((indicator, i) => {
+    indicator.classList.toggle('active', i === index);
+  });
+  
+  // Update slide counter
+  const slideCounter = document.getElementById('slideCounter');
+  slideCounter.textContent = `${index + 1} / ${slides.length}`;
+  
+  // Update current slide index
+  currentSlide = index;
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('projectModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+</script>
+
+
+
+
+
 <footer>
     <div class="footer-content">
       <div class="footer-section">
