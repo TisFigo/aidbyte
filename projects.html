@@ -1,953 +1,1056 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8747367703490183"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aidbyte - Empowering NGOs with Tech & AI</title>
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8747367703490183"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aidbyte - Empowering NGOs with Tech & AI</title>
 
-  <style>
-    :root {
-      --accent-yellow: #FFD700; /* Gold Yellow */
-      --accent-green: #32CD32;  /* Lime Green */
-      --accent-pink: #FF69B4;   /* Hot Pink */
-      --accent-purple: #9370DB; /* Medium Purple */
-      --primary-accent: #7fd7fa; /* Original Blue */
-      --text-light: #eaf6fb;
-      --bg-dark: #000000;
-      --bg-medium: #111111;
-    }
-    
-    html {
-      box-sizing: border-box;
-    }
-    *, *::before, *::after {
-      box-sizing: inherit;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Roboto', Arial, sans-serif;
-      background: #000000;
-      min-height: 100vh;
-      color: #eaf6fb;
-      font-size: 1.4rem;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-    
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block; /* Remove extra space below images */
-    }
-    
-    /* Header with logo aligned */
-    header {
-      background: rgba(0, 0, 0, 0.9);
-      width: 100%;
-      color: #fff;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(126, 215, 250, 0.2);
-    }
-    
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 2.4rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--accent-yellow), var(--accent-pink));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-right: 1rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-      letter-spacing: 1px;
-    }
-    
-    .logo-img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    
-    nav {
-      display: flex;
-      align-items: center;
-    }
-    
-    nav a {
-      color: #eaf6fb;
-      text-decoration: none;
-      margin: 0 1.5rem;
-      font-weight: 700;
-      font-size: 1.6rem;
-      transition: color 0.2s;
-      outline: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(126,215,250,0.18);
-    }
-    
-    nav a:focus, nav a:hover {
-      color: var(--accent-green);
-      background: rgba(50,205,50,0.10); /* Green with alpha */
-      border-color: var(--accent-green);
-    }
-    
-    /* Hero section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 7rem 2rem 0rem 2rem;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-    
-    .hero h1 {
-      font-size: 4.2rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0 0 2rem 0;
-      color: var(--accent-purple);
-      text-align: center;
-    }
-    
-    .hero p {
-      font-size: 2rem;
-      max-width: 1000px;
-      color: #eaf6fb;
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(to bottom right, #000000, #000000);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1px;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .ad {
-      margin: 10px 0;
-      width: 100%;
-      max-width: 1000px;
-    }
-
-    .game-container {
-      width: 100%;
-      max-width: 700px;
-      aspect-ratio: 2 / 3;
-      margin: 10px auto;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.03);
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .game-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 10px;
-      display: block;
-    }
-
-    .timer {
-      margin-top: 5px;
-      font-size: 15px;
-      color: #ccc;
-    }
-
-    @media (max-width: 768px) {
-      .side-msg { display: none; }
-    }
-
-    @media (max-width: 480px) {
-      .game-container {
-        aspect-ratio: 9 / 16;
-      }
-    }
-
-    /* Safe-named overlay */
-    #block-warning-overlay {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-      background: linear-gradient(to bottom right, #000000cc, #111111cc);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .popup-box {
-      background: #1e1e2f;
-      color: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      width: 90%;
-      max-width: 360px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      position: relative;
-      display: none;
-      opacity: 0;
-      transform: scale(0.9);
-      transition: all 0.3s ease;
-    }
-
-    .popup-box.show {
-      display: block;
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .popup-box p {
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .popup-box .close-btn {
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-    }
-/* Footer */
-    footer {
-      background: var(--bg-dark);
-      width: 100%;
-      color: #eaf6fb;
-      padding: 4rem 2rem 3rem;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-      border-radius: 30px 30px 0 0;
-      margin-top: 5rem;
-      border-top: 1px solid var(--accent-yellow);
-    }
-    
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1400px;
-      margin: 0 auto 3rem;
-    }
-    
-    .footer-section {
-      flex: 1;
-      min-width: 250px;
-      margin-bottom: 2rem;
-      padding: 0 1.5rem;
-    }
-    
-    .footer-section h3 {
-      color: var(--accent-green);
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-    
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .footer-links li {
-      margin-bottom: 1rem;
-    }
-    
-    .footer-links a {
-      color: #eaf6fb;
-      text-decoration: none;
-      transition: color 0.2s;
-      display: inline-block;
-      padding: 0.3rem 0;
-    }
-    
-    .footer-links a:hover, .footer-links a:focus {
-      color: var(--accent-pink);
-      text-decoration: underline;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    
-    .social-links a {
-      color: #eaf6fb;
-      font-size: 1.8rem;
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-      border: 1px solid rgba(126,215,250,0.3);
-      text-decoration: none;
-    }
-    
-    .social-links a:hover, .social-links a:focus {
-      background: rgba(126,215,250,0.15);
-      color: var(--accent-purple);
-      border-color: var(--accent-purple);
-      text-decoration: none;
-    }
-    
-    .copyright {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(126,215,250,0.2);
-      margin-top: 1rem;
-      max-width: 1400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 1100px) {
-      .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      .footer-section {
-        margin-bottom: 3rem;
-      }
-      
-      .social-links {
-        justify-content: center;
-      }
-      
-      .mission-content {
-        flex-direction: column;
-      }
-      
-      .mission-text {
-        padding-right: 0;
-        margin-bottom: 3rem;
-        text-align: center;
-      }
-      
-      .mission-text h2:after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-    
-    @media (max-width: 900px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .hero h1 {
-        font-size: 3rem;
-      }
-      
-      .logo {
-        font-size: 2.2rem;
-      }
-      
-      header {
-        flex-direction: column;
-        align-items: center; /* Center items when stacked */
-        padding: 1.5rem 1rem;
-      }
-      
-      nav {
-        flex-wrap: wrap;
-        justify-content: center; /* Center nav items when they wrap */
-        margin-top: 1rem;
-        width: 100%; /* Ensure nav takes full width */
-      }
-      
-      nav a {
-        margin: 0.5rem 0.5rem; /* Reduce horizontal margin slightly */
-        font-size: 1.4rem;
-        padding: 0.5rem 1rem;
+    <style>
+      :root {
+        --accent-yellow: #ffd700; /* Gold Yellow */
+        --accent-green: #32cd32; /* Lime Green */
+        --accent-pink: #ff69b4; /* Hot Pink */
+        --accent-purple: #9370db; /* Medium Purple */
+        --primary-accent: #7fd7fa; /* Original Blue */
+        --text-light: #eaf6fb;
+        --bg-dark: #000000;
+        --bg-medium: #000000; /* Changed from #111111 to black */
       }
 
-      .mission-text {
-        padding-right: 0; /* Remove right padding on smaller screens */
-        margin-bottom: 3rem;
-        text-align: center;
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
       }
 
-      .mission-text h2:after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      
-      .hero {
-        padding: 5rem 1.5rem 4rem;
-      }
-      
-      .hero p {
-        font-size: 1.8rem;
-      }
-    }
-    
-    @media (max-width: 600px) {
       body {
-        font-size: 1.2rem;
+        margin: 0;
+        font-family: "Roboto", Arial, sans-serif;
+        background: #000000; /* Already black */
+        min-height: 100vh;
+        color: #eaf6fb;
+        font-size: 1.4rem;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
       }
-      
-      .hero h1 {
-        font-size: 2.5rem;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block; /* Remove extra space below images */
       }
-      
-      .hero p {
-        font-size: 1.6rem;
+
+      /* Header with logo aligned */
+      header {
+        background: #000000; /* Changed from rgba(0, 0, 0, 0.9) to solid black */
+        width: 100%;
+        color: #fff;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(126, 215, 250, 0.2);
       }
-      
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+
       .logo {
-        font-size: 2rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          var(--accent-yellow),
+          var(--accent-pink)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-right: 1rem;
+        font-family: "Montserrat", Arial, sans-serif;
+        letter-spacing: 1px;
       }
-      
+
       .logo-img {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
       }
 
       nav a {
-        font-size: 1.1rem; /* Further reduce font size for very small screens */
-        padding: 0.3rem 0.6rem; /* Further reduce padding */
-        margin: 0.2rem 0.2rem; /* Further reduce margins */
-      }
-      
-      .cta-btn {
-        padding: 1.2rem 3rem;
-        font-size: 1.5rem;
-      }
-      
-      .mission-text h2 {
-        font-size: 2.5rem;
+        color: #eaf6fb;
+        text-decoration: none;
+        margin: 0 1.5rem;
+        font-weight: 700;
+        font-size: 1.6rem;
+        transition: color 0.2s;
+        outline: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: 18px;
+        background: #000000; /* Changed from rgba(255,255,255,0.04) to black */
+        border: 1px solid rgba(126, 215, 250, 0.18);
       }
 
-      .mission {
-        padding: 3rem 1rem; /* Adjust padding for mission section on very small screens */
+      nav a:focus,
+      nav a:hover {
+        color: var(--accent-green);
+        background: #000000; /* Changed from rgba(50,205,50,0.10) to black */
+        border-color: var(--accent-green);
       }
-      
+
+      /* Hero section */
       .hero {
-        padding: 4rem 1rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 7rem 2rem 0rem 2rem;
+        margin-bottom: 1rem;
+        position: relative;
       }
-      
+
       .hero h1 {
+        font-size: 4.2rem;
+        font-family: "Montserrat", Arial, sans-serif;
+        margin: 0 0 2rem 0;
+        color: var(--accent-purple);
+        text-align: center;
+      }
+
+      .hero p {
+        font-size: 2rem;
+        max-width: 1000px;
+        color: #eaf6fb;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        background: #000000; /* Changed from gradient to solid black */
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1px;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .ad {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .game-container {
+        width: 100%;
+        max-width: 700px;
+        aspect-ratio: 2 / 3;
+        margin: 10px auto;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .game-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .timer {
+        margin-top: 5px;
+        font-size: 15px;
+        color: #ccc;
+      }
+
+      @media (max-width: 768px) {
+        .side-msg {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .game-container {
+          aspect-ratio: 9 / 16;
+        }
+      }
+
+      /* Safe-named overlay */
+      #block-warning-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        background: #000000cc; /* Changed from gradient to solid black */
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .popup-box {
+        background: #000000; /* Changed from #1e1e2f to black */
+        color: #fff;
+        border-radius: 12px;
+        padding: 24px;
+        width: 90%;
+        max-width: 360px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        position: relative;
+        display: none;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.3s ease;
+      }
+
+      .popup-box.show {
+        display: block;
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .popup-box p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .popup-box .close-btn {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      /* Footer */
+      footer {
+        background: var(--bg-dark);
+        width: 100%;
+        color: #eaf6fb;
+        padding: 4rem 2rem 3rem;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        border-radius: 30px 30px 0 0;
+        margin-top: 5rem;
+        border-top: 1px solid var(--accent-yellow);
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1400px;
+        margin: 0 auto 3rem;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 2rem;
+        padding: 0 1.5rem;
+      }
+
+      .footer-section h3 {
+        color: var(--accent-green);
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 1rem;
+      }
+
+      .footer-links a {
+        color: #eaf6fb;
+        text-decoration: none;
+        transition: color 0.2s;
+        display: inline-block;
+        padding: 0.3rem 0;
+      }
+
+      .footer-links a:hover,
+      .footer-links a:focus {
+        color: var(--accent-pink);
+        text-decoration: underline;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: #eaf6fb;
+        font-size: 1.8rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background: #000000; /* Changed from rgba(255,255,255,0.08) to black */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        border: 1px solid rgba(126, 215, 250, 0.3);
+        text-decoration: none;
+      }
+
+      .social-links a:hover,
+      .social-links a:focus {
+        background: #000000; /* Changed from rgba(126,215,250,0.15) to black */
+        color: var(--accent-purple);
+        border-color: var(--accent-purple);
+        text-decoration: none;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(126, 215, 250, 0.2);
+        margin-top: 1rem;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1100px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-section {
+          margin-bottom: 3rem;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+
+        .mission-content {
+          flex-direction: column;
+        }
+
+        .mission-text {
+          padding-right: 0;
+          margin-bottom: 3rem;
+          text-align: center;
+        }
+
+        .mission-text h2:after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .features {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .logo {
+          font-size: 2.2rem;
+        }
+
+        header {
+          flex-direction: column;
+          align-items: center; /* Center items when stacked */
+          padding: 1.5rem 1rem;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          justify-content: center; /* Center nav items when they wrap */
+          margin-top: 1rem;
+          width: 100%; /* Ensure nav takes full width */
+        }
+
+        nav a {
+          margin: 0.5rem 0.5rem; /* Reduce horizontal margin slightly */
+          font-size: 1.4rem;
+          padding: 0.5rem 1rem;
+        }
+
+        .mission-text {
+          padding-right: 0; /* Remove right padding on smaller screens */
+          margin-bottom: 3rem;
+          text-align: center;
+        }
+
+        .mission-text h2:after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .hero {
+          padding: 5rem 1.5rem 4rem;
+        }
+
+        .hero p {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          font-size: 1.2rem;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.6rem;
+        }
+
+        .logo {
+          font-size: 2rem;
+        }
+
+        .logo-img {
+          width: 40px;
+          height: 40px;
+        }
+
+        nav a {
+          font-size: 1.1rem; /* Further reduce font size for very small screens */
+          padding: 0.3rem 0.6rem; /* Further reduce padding */
+          margin: 0.2rem 0.2rem; /* Further reduce margins */
+        }
+
+        .cta-btn {
+          padding: 1.2rem 3rem;
+          font-size: 1.5rem;
+        }
+
+        .mission-text h2 {
+          font-size: 2.5rem;
+        }
+
+        .mission {
+          padding: 3rem 1rem; /* Adjust padding for mission section on very small screens */
+        }
+
+        .hero {
+          padding: 4rem 1rem 3rem;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      /* Accessibility: focus styles for all interactive elements */
+      a:focus,
+      button:focus {
+        outline: 2px solid var(--accent-yellow);
+        outline-offset: 2px;
+      }
+
+      /* Coming Soon Section Styles */
+      .coming-soon-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh; /* Adjust as needed */
+        padding: 5rem 2rem;
+        text-align: center;
+        background: var(--bg-medium);
+        margin: 4rem auto;
+        border-radius: 20px;
+        max-width: 1200px;
+      }
+
+      .coming-soon-content {
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .coming-soon-section h1 {
+        font-size: 4rem;
+        font-family: "Montserrat", sans-serif;
+        color: var(--accent-yellow);
+        margin-bottom: 2rem;
+      }
+
+      .coming-soon-section p {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        color: var(--text-light);
+        margin-bottom: 2.5rem;
+      }
+
+      .social-links-coming-soon {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .social-links-coming-soon a {
+        color: var(--text-light);
         font-size: 2.5rem;
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        background: #000000; /* Changed from rgba(255,255,255,0.08) to black */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        border: 1px solid rgba(126, 215, 250, 0.3);
+        text-decoration: none;
+      }
+
+      .social-links-coming-soon a:hover,
+      .social-links-coming-soon a:focus {
+        background: #000000; /* Changed from rgba(255,215,0,0.15) to black */
+        color: var(--accent-yellow);
+        border-color: var(--accent-yellow);
+        transform: translateY(-5px);
+      }
+
+      @media (max-width: 900px) {
+        .coming-soon-section h1 {
+          font-size: 3rem;
+        }
+        .coming-soon-section p {
+          font-size: 1.6rem;
+        }
+        .social-links-coming-soon a {
+          font-size: 2rem;
+          width: 4.5rem;
+          height: 4.5rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .coming-soon-section h1 {
+          font-size: 2.5rem;
+        }
+        .coming-soon-section p {
+          font-size: 1.4rem;
+        }
+        .social-links-coming-soon a {
+          font-size: 1.8rem;
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <div class="logo-img">
+          <img
+            src="https://media.discordapp.net/attachments/1044238022838857859/1384932468745961522/496510237_1232389318296523_633496515172158471_n.png?ex=686b4c9f&is=6869fb1f&hm=35f015685f5c9640fe8c4c8a3a0329fe045d758dbbbc7ac3d3fbc01c77b61a96&=&format=webp&quality=lossless&width=729&height=703"
+            alt="Aidbyte Logo"
+          />
+        </div>
+        <div class="logo">Aidbyte</div>
+      </div>
+      <nav>
+        <a href="/about.html">About</a>
+        <a href="/partners.html">Partners</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Our Projects</h1>
+    </section>
+
+    <div class="projects-container">
+      <div class="project-card" onclick="openProject(1)">
+        <img
+          src="https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+          alt="AI-Powered Donation Platform Thumbnail"
+          class="project-thumbnail"
+        />
+        <h3>AI Chatbots</h3>
+        <p class="project-preview">
+          We create custom AI chatbots tailored for NGOs to enhance their online
+          presence...
+        </p>
+      </div>
+
+      <div class="project-card" onclick="openProject(2)">
+        <img
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+          alt="NGO Resource Management System Thumbnail"
+          class="project-thumbnail"
+        />
+        <h3>Web Development</h3>
+        <p class="project-preview">
+          We build clean, responsive websites for NGOs that help showcase their
+          mission, campaigns, and impact...
+        </p>
+      </div>
+
+      <div class="project-card" onclick="openProject(3)">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+          alt="Impact Analytics Dashboard Thumbnail"
+          class="project-thumbnail"
+        />
+        <h3>Interactive Pages for NGO Support</h3>
+        <p class="project-preview">
+          We create fun, interactive mini-webpages with simple games and
+          embedded ads to help NGOs...
+        </p>
+      </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="slideshow-container">
+          <div class="slides">
+            <!-- Slides will be inserted here by JavaScript -->
+          </div>
+          <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="next" onclick="changeSlide(1)">&#10095;</button>
+          <div class="slide-counter" id="slideCounter">1 / 4</div>
+          <div class="slide-indicators" id="slideIndicators">
+            <!-- Indicators will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <div class="project-details">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <div class="explore-button-container">
+            <a id="exploreButton" href="#" class="explore-button"
+              >Explore Project</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .projects-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .project-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(126, 215, 250, 0.1);
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent-yellow);
+      }
+
+      .project-thumbnail {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
         margin-bottom: 1.5rem;
       }
-    }
-    
-    /* Accessibility: focus styles for all interactive elements */
-    a:focus, button:focus {
-      outline: 2px solid var(--accent-yellow);
-      outline-offset: 2px;
-    }
 
-    /* Coming Soon Section Styles */
-    .coming-soon-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 60vh; /* Adjust as needed */
-      padding: 5rem 2rem;
-      text-align: center;
-      background: var(--bg-medium);
-      margin: 4rem auto;
-      border-radius: 20px;
-      max-width: 1200px;
-    }
-
-    .coming-soon-content {
-      max-width: 800px;
-      width: 100%;
-    }
-
-    .coming-soon-section h1 {
-      font-size: 4rem;
-      font-family: 'Montserrat', sans-serif;
-      color: var(--accent-yellow);
-      margin-bottom: 2rem;
-    }
-
-    .coming-soon-section p {
-      font-size: 1.8rem;
-      line-height: 1.6;
-      color: var(--text-light);
-      margin-bottom: 2.5rem;
-    }
-
-    .social-links-coming-soon {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .social-links-coming-soon a {
-      color: var(--text-light);
-      font-size: 2.5rem;
-      width: 5.5rem;
-      height: 5.5rem;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-      border: 1px solid rgba(126,215,250,0.3);
-      text-decoration: none;
-    }
-
-    .social-links-coming-soon a:hover, .social-links-coming-soon a:focus {
-      background: rgba(255,215,0,0.15); /* Yellow with alpha */
-      color: var(--accent-yellow);
-      border-color: var(--accent-yellow);
-      transform: translateY(-5px);
-    }
-
-    @media (max-width: 900px) {
-      .coming-soon-section h1 {
-        font-size: 3rem;
-      }
-      .coming-soon-section p {
-        font-size: 1.6rem;
-      }
-      .social-links-coming-soon a {
-        font-size: 2rem;
-        width: 4.5rem;
-        height: 4.5rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .coming-soon-section h1 {
-        font-size: 2.5rem;
-      }
-      .coming-soon-section p {
-        font-size: 1.4rem;
-      }
-      .social-links-coming-soon a {
+      .project-card h3 {
+        color: var(--accent-yellow);
+        margin-bottom: 1rem;
         font-size: 1.8rem;
-        width: 4rem;
-        height: 4rem;
       }
-    }
-  </style>
-</head>
-<body>
-<header>
-    <div class="logo-container">
-      <div class="logo-img">
-  <img src="https://media.discordapp.net/attachments/1044238022838857859/1384932468745961522/496510237_1232389318296523_633496515172158471_n.png?ex=6874871f&is=6873359f&hm=fbba02b8a2a32a5be4bdbf200115e2662000d844326cd079090f6b4906bb1824&=&format=webp&quality=lossless&width=729&height=703" alt="Aidbyte Logo" />
-</div>
-<div class="logo">Aidbyte</div>
-    </div>
-    <nav>
-      <a href="/about.html">About</a>
-      <a href="/partners.html">Partners</a>
-      <a href="/projects.html">Projects</a>
-      <a href="/index.html#contact">Contact</a>
-    </nav>
-  </header>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1>Our Projects</h1>
-</section>
+      .project-preview {
+        color: var(--text-light);
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
 
-<div class="projects-container">
-  <div class="project-card" onclick="openProject(1)">
-    <img src="https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="AI-Powered Donation Platform Thumbnail" class="project-thumbnail">
-    <h3>AI-Powered Donation Platform</h3>
-    <p class="project-preview">An intelligent platform that connects donors with NGOs using AI-driven matching algorithms.</p>
-  </div>
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+      }
 
-  <div class="project-card" onclick="openProject(2)">
-    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="NGO Resource Management System Thumbnail" class="project-thumbnail">
-    <h3>NGO Resource Management System</h3>
-    <p class="project-preview">Comprehensive solution for NGOs to manage resources, volunteers, and beneficiaries efficiently.</p>
-  </div>
+      .modal-content {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        margin: 2% auto;
+        background: var(--bg-medium);
+        padding: 2rem;
+        border-radius: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
 
-  <div class="project-card" onclick="openProject(3)">
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Impact Analytics Dashboard Thumbnail" class="project-thumbnail">
-    <h3>Impact Analytics Dashboard</h3>
-    <p class="project-preview">Data visualization platform helping NGOs track and showcase their social impact metrics.</p>
-  </div>
-</div>
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: var(--text-light);
+        z-index: 1001;
+      }
 
-<!-- Project Modal -->
-<div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeModal()">&times;</span>
-    <div class="slideshow-container">
-      <div class="slides">
-        <!-- Slides will be inserted here by JavaScript -->
+      .slideshow-container {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+
+      .slides img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+
+      .slide-counter {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 14px;
+      }
+
+      .slide-indicators {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .indicator {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .indicator.active {
+        background-color: var(--accent-yellow);
+        transform: scale(1.2);
+      }
+
+      .project-details {
+        padding: 2rem 0;
+      }
+
+      .project-details h2 {
+        color: var(--accent-yellow);
+        margin-bottom: 1.5rem;
+      }
+
+      .explore-button-container {
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      .explore-button {
+        display: inline-block;
+        background: var(--accent-purple);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent-purple);
+      }
+
+      .explore-button:hover {
+        background: transparent;
+        color: var(--accent-purple);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .modal-content {
+          width: 95%;
+          margin: 5% auto;
+        }
+
+        .slides img {
+          height: 300px;
+        }
+
+        .explore-button {
+          padding: 0.8rem 1.5rem;
+          font-size: 1.4rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .explore-button {
+          padding: 0.7rem 1.2rem;
+          font-size: 1.2rem;
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    </style>
+
+    <script>
+      const projectData = {
+        1: {
+          title: "AI Chatbots",
+          description:
+            "We create custom AI chatbots tailored for NGOs to enhance their online presence. These chatbots can engage website visitors, answer common questions, and explain your mission clearly and conversationally—day or night. Designed to match your brand and values, they’re lightweight, easy to integrate, and powered by aidbyte resources, making them a cost-effective and impactful solution for outreach and support.Try our own AIdbyte bot by clicking the button below.",
+          images: [
+            "https://media.discordapp.net/attachments/1044238022838857859/1393864503757766666/image.png?ex=6874b8fa&is=6873677a&hm=7dfd2e125c1d3cd482da89880b0f16792e11a4d08543474b8b1970a8a2e7d74f&=&format=webp&quality=lossless&width=688&height=351", // Dashboard view
+            "https://media.discordapp.net/attachments/1044238022838857859/1393865277216919633/AJfQ9KTZHDQotKoQtDjSRVzaWfiEfft2ZzP1iXwn8C_sCcWjP9eAZrPdDDv87WutkybERosdJgXN3IbifSUVV0qVJRM2bAOo1fuYWyBVwrWsWhJm7FmH8zcQmCQ6cqUoRwSMGnJ-pdhRafV2VDf1AYZAqtLioHogQQRu0K7uzYECLz3x2ZnAs1024.png?ex=6874b9b2&is=68736832&hm=0f2993ac5aaec80113c83b90471359bd4cf787470e4e21515e78fee31efd9d46&=&format=webp&quality=lossless&width=893&height=893", // AI matching visualization
+            "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Payment processing
+            "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Team working on platform
+          ],
+          projectUrl: "/projects/ai-donation-platform.html",
+        },
+        2: {
+          title: "Web Development",
+          description:
+            "We build clean, responsive websites for NGOs that help showcase their mission, campaigns, and impact. Whether it's a simple landing page or a full-featured site with forms, galleries, and donation links, we design each site to be accessible, mobile-friendly, and easy to update—using aidbyte resources and backend so you can focus on your cause, not your tech.",
+          images: [
+            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Team planning resources
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Resource tracking interface
+            "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Volunteer management
+            "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Data reporting
+          ],
+          projectUrl: "/projects/ngo-resource-management.html",
+        },
+        3: {
+          title: "Interactive Pages for NGO Support",
+          description:
+            "We create fun, interactive mini-webpages with simple games and embedded ads to help NGOs engage visitors while generating passive revenue. These pages are lightweight, mobile-friendly, and designed to support causes in a creative, cost-free way—turning every click into a small but meaningful impact.",
+          images: [
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Data visualization
+            "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Analytics dashboard
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Charts and graphs
+            "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Team analyzing data
+          ],
+          projectUrl: "/projects/impact-analytics-dashboard.html",
+        },
+      };
+
+      let currentSlide = 0;
+      let currentProject = null;
+
+      function openProject(projectId) {
+        currentProject = projectId;
+        currentSlide = 0;
+        const project = projectData[projectId];
+
+        document.getElementById("modalTitle").textContent = project.title;
+        document.getElementById("modalDescription").textContent =
+          project.description;
+
+        // Set the explore button URL
+        const exploreButton = document.getElementById("exploreButton");
+        exploreButton.href = project.projectUrl;
+
+        const slidesContainer = document.querySelector(".slides");
+        slidesContainer.innerHTML = project.images
+          .map((src) => `<img src="${src}" alt="Project image">`)
+          .join("");
+
+        // Create slide indicators
+        const indicatorsContainer = document.getElementById("slideIndicators");
+        indicatorsContainer.innerHTML = "";
+
+        for (let i = 0; i < project.images.length; i++) {
+          const indicator = document.createElement("span");
+          indicator.className = "indicator";
+          indicator.onclick = function () {
+            showSlide(i);
+          };
+          indicatorsContainer.appendChild(indicator);
+        }
+
+        document.getElementById("projectModal").style.display = "block";
+        document.body.style.overflow = "hidden";
+
+        showSlide(0);
+      }
+
+      function closeModal() {
+        document.getElementById("projectModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      function changeSlide(direction) {
+        const slides = document.querySelectorAll(".slides img");
+        currentSlide =
+          (currentSlide + direction + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".slides img");
+        const indicators = document.querySelectorAll(".indicator");
+
+        // Update slides
+        slides.forEach((slide, i) => {
+          slide.style.display = i === index ? "block" : "none";
+        });
+
+        // Update indicators
+        indicators.forEach((indicator, i) => {
+          indicator.classList.toggle("active", i === index);
+        });
+
+        // Update slide counter
+        const slideCounter = document.getElementById("slideCounter");
+        slideCounter.textContent = `${index + 1} / ${slides.length}`;
+
+        // Update current slide index
+        currentSlide = index;
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const modal = document.getElementById("projectModal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      };
+    </script>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Aidbyte</h3>
+          <p>
+            We're dedicated to empowering NGOs with cutting-edge technology
+            solutions that amplify their impact and reach.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/partners.html">Partners</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Our Projects</h3>
+          <ul class="footer-links">
+            <li><a href="#">AI Integration</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Tech Consulting</a></li>
+            <li><a href="#">Data Analytics</a></li>
+          </ul>
+        </div>
       </div>
-      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-      <button class="next" onclick="changeSlide(1)">&#10095;</button>
-      <div class="slide-counter" id="slideCounter">1 / 4</div>
-      <div class="slide-indicators" id="slideIndicators">
-        <!-- Indicators will be inserted here by JavaScript -->
+
+      <div class="copyright">
+        &copy; 2025 Aidbyte. Empowering NGOs with Tech and AI. All Rights
+        Reserved.
       </div>
-    </div>
-    <div class="project-details">
-      <h2 id="modalTitle"></h2>
-      <p id="modalDescription"></p>
-    </div>
-  </div>
-</div>
-
-<style>
-.projects-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-}
-
-.project-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(126, 215, 250, 0.1);
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-color: var(--accent-yellow);
-}
-
-.project-thumbnail {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-}
-
-.project-card h3 {
-  color: var(--accent-yellow);
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-.project-preview {
-  color: var(--text-light);
-  font-size: 1.4rem;
-  line-height: 1.6;
-}
-
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-}
-
-.modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 1000px;
-  margin: 2% auto;
-  background: var(--bg-medium);
-  padding: 2rem;
-  border-radius: 20px;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-.close-modal {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  font-size: 2.5rem;
-  cursor: pointer;
-  color: var(--text-light);
-  z-index: 1001;
-}
-
-.slideshow-container {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.slides img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.slide-counter {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 14px;
-}
-
-.slide-indicators {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.indicator {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.indicator.active {
-  background-color: var(--accent-yellow);
-  transform: scale(1.2);
-}
-
-.project-details {
-  padding: 2rem 0;
-}
-
-.project-details h2 {
-  color: var(--accent-yellow);
-  margin-bottom: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .modal-content {
-    width: 95%;
-    margin: 5% auto;
-  }
-
-  .slides img {
-    height: 300px;
-  }
-}
-</style>
-
-<script>
-const projectData = {
-  1: {
-    title: "AI-Powered Donation Platform",
-    description: "Our flagship project revolutionizes how donations reach those in need. Using advanced AI algorithms, we match donors with NGOs based on their interests, values, and impact areas. The platform features real-time tracking, impact reporting, and seamless payment integration. Built with React and TensorFlow, it processes thousands of matches daily with 98% accuracy.",
-    images: [
-      "https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Dashboard view
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // AI matching visualization
-      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Payment processing
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80" // Team working on platform
-    ]
-  },
-  2: {
-    title: "NGO Resource Management System",
-    description: "A comprehensive solution that streamlines NGO operations. Features include volunteer management, resource allocation, beneficiary tracking, and automated reporting. The system has helped over 50 NGOs reduce administrative overhead by 40% and improve resource utilization by 60%.",
-    images: [
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Team planning resources
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Resource tracking interface
-      "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Volunteer management
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80" // Data reporting
-    ]
-  },
-  3: {
-    title: "Impact Analytics Dashboard",
-    description: "A powerful visualization platform that helps NGOs measure, track, and communicate their impact. Built with D3.js and Python, it processes complex data sets to create intuitive, interactive visualizations. Organizations using this dashboard have reported a 75% increase in donor engagement and improved decision-making capabilities.",
-    images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Data visualization
-      "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Analytics dashboard
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80", // Charts and graphs
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80" // Team analyzing data
-    ]
-  }
-};
-
-let currentSlide = 0;
-let currentProject = null;
-
-function openProject(projectId) {
-  currentProject = projectId;
-  currentSlide = 0;
-  const project = projectData[projectId];
-  
-  document.getElementById('modalTitle').textContent = project.title;
-  document.getElementById('modalDescription').textContent = project.description;
-  
-  const slidesContainer = document.querySelector('.slides');
-  slidesContainer.innerHTML = project.images
-    .map(src => `<img src="${src}" alt="Project image">`)
-    .join('');
-  
-  // Create slide indicators
-  const indicatorsContainer = document.getElementById('slideIndicators');
-  indicatorsContainer.innerHTML = '';
-  
-  for (let i = 0; i < project.images.length; i++) {
-    const indicator = document.createElement('span');
-    indicator.className = 'indicator';
-    indicator.onclick = function() { showSlide(i); };
-    indicatorsContainer.appendChild(indicator);
-  }
-  
-  document.getElementById('projectModal').style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  
-  showSlide(0);
-}
-
-function closeModal() {
-  document.getElementById('projectModal').style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-
-function changeSlide(direction) {
-  const slides = document.querySelectorAll('.slides img');
-  currentSlide = (currentSlide + direction + slides.length) % slides.length;
-  showSlide(currentSlide);
-}
-
-function showSlide(index) {
-  const slides = document.querySelectorAll('.slides img');
-  const indicators = document.querySelectorAll('.indicator');
-  
-  // Update slides
-  slides.forEach((slide, i) => {
-    slide.style.display = i === index ? 'block' : 'none';
-  });
-  
-  // Update indicators
-  indicators.forEach((indicator, i) => {
-    indicator.classList.toggle('active', i === index);
-  });
-  
-  // Update slide counter
-  const slideCounter = document.getElementById('slideCounter');
-  slideCounter.textContent = `${index + 1} / ${slides.length}`;
-  
-  // Update current slide index
-  currentSlide = index;
-}
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-  const modal = document.getElementById('projectModal');
-  if (event.target === modal) {
-    closeModal();
-  }
-}
-</script>
-
-
-
-
-
-<footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>About Aidbyte</h3>
-        <p>We're dedicated to empowering NGOs with cutting-edge technology solutions that amplify their impact and reach.</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-           <li><a href="/about.html">About</a></li>
-           <li><a href="/partners.html">Partners</a></li>
-           <li><a href="/projects.html">Projects</a></li>
-           <li><a href="/index.html#contact">Contact</a></li>
-         </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Our Projects</h3>
-        <ul class="footer-links">
-          <li><a href="#">AI Integration</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Tech Consulting</a></li>
-          <li><a href="#">Data Analytics</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="copyright">
-      &copy; 2025 Aidbyte. Empowering NGOs with Tech and AI. All Rights Reserved.
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
